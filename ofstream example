@@ -1,6 +1,26 @@
+/*
+ * Example of using ofstream class
+ */
+
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
-  cout << "Hello World" << endl;
+	ofstream fout;    // create ofstream class object called fout
+
+	string line;
+
+	// default ios::out openmode automatically deletes all contents of file
+	// to append content to a new line w/out deleting all...
+	// ...content --> fout.open("text.txt", ios::app);
+	fout.open("text.txt");
+
+	while (fout) {    // execute file if file successfully opened
+		getline(cin, line);    // cin reads a line from our input
+
+		fout << line << endl;    // write line in file
+	}
+
+	fout.close();    // closes file
 }
