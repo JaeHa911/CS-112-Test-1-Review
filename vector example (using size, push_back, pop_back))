@@ -1,0 +1,33 @@
+/*
+ * example of using vectors
+ */
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void vector_practice(vector<string> student_name) {
+	for(unsigned i = 0; i <= student_name.size(); i++) {
+		cout << i + 1 << ". " << student_name[i] << endl;
+	}
+}
+
+int main() {
+	vector<string> std_name;    // initializes vector w/ string type w/ a variable called std_name
+
+	// gets size of vector std_name before adding elements to it
+	cout << "Vector size before adding elements:" << std_name.size() << endl;
+
+	// adds names at the end of vector std_name
+	std_name.push_back("Enma");
+	std_name.push_back("Jae Ha");
+	std_name.push_back("Jacob");
+	std_name.push_back("Jack");
+
+	// gets size of vector std_name after adding elements to it
+	cout << "Vector size after adding elements:" << std_name.size() << "\n" << endl;
+
+	std_name.pop_back();    // removes Jack from vector, std_name
+
+	vector_practice(std_name);    // calls vector_practice instance and uses std_name as the vector variable for student_name
+}
